@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/escort_book_statistics
+    username: postgres
+    password: 
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    generate-ddl: true
