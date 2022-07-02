@@ -18,4 +18,10 @@ public class CustomerStatistic {
     @Field("spent_money")
     long spentMoney;
 
+    @Field("emitted_claims")
+    int emittedClaims;
+
+    @Field("received_claims")
+    int receivedClaims;
+
 }

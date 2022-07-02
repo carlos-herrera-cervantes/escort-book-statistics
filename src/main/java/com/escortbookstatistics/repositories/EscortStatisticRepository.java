@@ -16,7 +16,9 @@ public interface EscortStatisticRepository extends MongoRepository<EscortStatist
         "{ $group: {"
         + "_id: $escort_id,"
         + "services_provided: { $sum: $services_provided },"
-        + "earned_money: { $sum: $earned_money }"
+        + "earned_money: { $sum: $earned_money },"
+        + "emitted_claims: { $sum: $emitted_claims },"
+        + "received_claims: { $sum: $received_claims }"
         + "}}"
     })
     public EscortStatistic groupByEscort(Date from, Date to, String escortId);

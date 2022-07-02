@@ -21,4 +21,7 @@ public class StateStatistic {
     @Field("earnings")
     long earnings;
 
+    @Field("claims")
+    int claims;
+
 }

@@ -19,6 +19,7 @@ public interface CityStatisticRepository extends MongoRepository<CityStatistic, 
         + "total_customers: { $sum: $total_customers },"
         + "total_escorts: { $sum: $total_escorts },"
         + "earnings: { $sum: $earnings },"
+        + "claims: { $sum: $claims }"
         + "}}"
     })
     List<CityStatistic> groupBy(Date from, Date to);
@@ -30,6 +31,7 @@ public interface CityStatisticRepository extends MongoRepository<CityStatistic, 
         + "total_customers: { $sum: $total_customers },"
         + "total_escorts: { $sum: $total_escorts },"
         + "earnings: { $sum: $earnings },"
+        + "claims: { $sum: $claims }"
         + "}}"
     })
     CityStatistic groupByCity(Date from, Date to, String city);

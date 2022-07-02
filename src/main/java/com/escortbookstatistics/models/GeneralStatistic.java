@@ -18,4 +18,7 @@ public class GeneralStatistic {
     @Field("earnings")
     long earnings;
 
+    @Field("claims")
+    int claims;
+
 }

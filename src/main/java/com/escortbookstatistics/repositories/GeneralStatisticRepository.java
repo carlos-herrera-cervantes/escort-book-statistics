@@ -17,7 +17,8 @@ public interface GeneralStatisticRepository extends MongoRepository<GeneralStati
         + "_id: null,"
         + "total_customers: { $sum: $total_customers },"
         + "total_escorts: { $sum: $total_escorts },"
-        + "earnings: { $sum: $earnings }"
+        + "earnings: { $sum: $earnings },"
+        + "claims: { $sum: $claims }"
         + "}}"
     })
     GeneralStatistic groupBy(Date from, Date to);

@@ -16,7 +16,9 @@ public interface CustomerStatisticRepository extends MongoRepository<CustomerSta
         "{ $group: {"
         + "_id: $customer_id,"
         + "hired_services: { $sum: $hired_services },"
-        + "spent_money: { $sum: $spent_money }"
+        + "spent_money: { $sum: $spent_money },"
+        + "emitted_claims: { $sum: $emitted_claims },"
+        + "received_claims: { $sum: $received_claims }"
         + "}}"
     })
     public CustomerStatistic groupByCustomer(Date from, Date to, String customerId);

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.escortbookstatistics.models.GeneralStatistic;
 import com.escortbookstatistics.repositories.GeneralStatisticRepository;
@@ -29,6 +30,11 @@ public class GeneralStatisticController {
         @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date to
     ) {
         GeneralStatistic statistics = generalStatisticRepository.groupBy(from, to);
+
+        if (statistics == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity<GeneralStatistic>(statistics, HttpStatus.OK);
     }
 

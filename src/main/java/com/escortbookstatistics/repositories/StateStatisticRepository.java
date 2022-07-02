@@ -19,6 +19,7 @@ public interface StateStatisticRepository extends MongoRepository<StateStatistic
         + "total_customers: { $sum: $total_customers },"
         + "total_escorts: { $sum: $total_escorts },"
         + "earnings: { $sum: $earnings },"
+        + "claims: { $sum: $claims }"
         + "}}"
     })
     List<StateStatistic> groupBy(Date from, Date to);
@@ -30,6 +31,7 @@ public interface StateStatisticRepository extends MongoRepository<StateStatistic
         + "total_customers: { $sum: $total_customers },"
         + "total_escorts: { $sum: $total_escorts },"
         + "earnings: { $sum: $earnings },"
+        + "claims: { $sum: $claims }"
         + "}}"
     })
     StateStatistic groupByState(Date from, Date to, String state);
