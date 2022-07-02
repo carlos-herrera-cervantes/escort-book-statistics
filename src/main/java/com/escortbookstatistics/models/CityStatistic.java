@@ -21,4 +21,7 @@ public class CityStatistic {
     @Field("earnings")
     long earnings;
 
+    @Field("claims")
+    int claims;
+
 }

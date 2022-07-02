@@ -17,5 +17,11 @@ public class EscortStatistic {
 
     @Field("earned_money")
     long earnedMoney;
+
+    @Field("emitted_claims")
+    int emittedClaims;
+
+    @Field("received_claims")
+    int receivedClaims;
     
 }
