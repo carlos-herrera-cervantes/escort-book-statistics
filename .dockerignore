@@ -1,0 +1,6 @@
+.env
+.editorconfig
+.gitignore
+.github
+target
+README.md
